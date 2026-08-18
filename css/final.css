@@ -1,0 +1,134 @@
+.tela-final {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.camada-efeitos {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.conteudo-final {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+}
+
+.titulo-final {
+    font-size: 1.3rem;
+    color: var(--cor-primaria);
+    text-shadow: 3px 3px 0 var(--cor-destaque);
+    margin-bottom: 32px;
+    animation: pulsar 2.5s infinite;
+}
+
+/* GALERIA */
+.galeria-final {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.foto-galeria {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 4px solid var(--cor-destaque);
+    box-shadow: 4px 4px 0 var(--cor-secundaria);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.foto-galeria:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+/* leve rotação alternada pra parecer "coladas com carinho" */
+.foto-galeria:nth-child(odd) { transform: rotate(-3deg); }
+.foto-galeria:nth-child(even) { transform: rotate(3deg); }
+.foto-galeria:nth-child(odd):hover { transform: scale(1.08) rotate(-3deg); }
+.foto-galeria:nth-child(even):hover { transform: scale(1.08) rotate(3deg); }
+
+/* POEMA */
+.cartao-poema {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--cor-secundaria);
+    padding: 28px;
+    margin-bottom: 40px;
+}
+
+.texto-poema {
+    font-size: 0.85rem;
+    line-height: 2.2;
+    white-space: pre-line;
+    color: var(--cor-destaque);
+}
+
+/* ANIVERSÁRIO */
+.cartao-aniversario {
+    padding: 20px;
+}
+
+.titulo-aniversario {
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 20px;
+}
+
+.texto-aniversario {
+    font-size: 0.8rem;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.assinatura-final {
+    font-size: 0.7rem;
+    color: var(--cor-primaria);
+    font-style: italic;
+}
+
+/* PARTÍCULAS FLUTUANTES (corações, estrelas, criaturas, confete) */
+.particula-flutuante {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: subirFlutuando linear forwards;
+}
+
+@keyframes subirFlutuando {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.confete {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    animation: cairConfete linear forwards;
+}
+
+@keyframes cairConfete {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}

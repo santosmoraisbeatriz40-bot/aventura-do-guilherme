@@ -1,0 +1,226 @@
+/* ===== TÍTULO DOS NÍVEIS ===== */
+
+.titulo-nivel {
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.instrucao-nivel {
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contador-nivel {
+    font-size: 1rem;
+    color: var(--cor-primaria);
+    margin-bottom: 16px;
+}
+
+
+/* ===== ÁREA DO NÍVEL 1 ===== */
+
+.area-jogo {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    height: 350px;
+    border: 3px solid var(--cor-primaria);
+    background-color: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.coracao-clicavel {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.coracao-clicavel:hover {
+    transform: scale(1.2);
+}
+
+
+/* ===== MENSAGEM DE VITÓRIA ===== */
+
+.mensagem-vitoria {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.mensagem-vitoria p {
+    font-size: 1rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 16px;
+}
+
+.escondido {
+    display: none !important;
+}
+
+
+/* ===== NÍVEL 2 ===== */
+
+.cartao-pergunta {
+    width: 90%;
+    max-width: 500px;
+}
+
+.texto-pergunta {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+
+/* ===== ÁREA ONDE FICAM AS ALTERNATIVAS ===== */
+
+.opcoes-quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* ===== BOTÕES DAS ALTERNATIVAS ===== */
+
+.opcao-quiz {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    padding: 14px;
+    background-color: transparent;
+    border: 3px solid var(--cor-primaria);
+    color: var(--cor-texto);
+    cursor: pointer;
+    text-align: left;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+/* ===== QUANDO PASSAR O MOUSE ===== */
+
+.opcao-quiz:hover:not(:disabled) {
+    background-color: rgba(255, 107, 157, 0.2);
+    transform: scale(1.02);
+}
+
+
+/* ===== RESPOSTA CORRETA ===== */
+
+.alternativa-correta {
+    background-color: var(--cor-secundaria) !important;
+    border-color: var(--cor-secundaria) !important;
+    color: var(--cor-fundo) !important;
+}
+
+
+/* ===== RESPOSTA ERRADA ===== */
+
+.alternativa-errada {
+    border-color: #ff4d4d !important;
+    opacity: 0.6;
+}
+
+
+/* ===== BOTÃO DESABILITADO ===== */
+
+.opcao-quiz:disabled {
+    cursor: default;
+}
+
+
+/* ===== NÍVEL 3 — JOGO DA MEMÓRIA ===== */
+
+.tabuleiro-memoria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 90%;
+    max-width: 420px;
+}
+
+.carta-memoria {
+    aspect-ratio: 1 / 1;
+    font-size: 1.5rem;
+    background-color: var(--cor-primaria);
+    border: 3px solid var(--cor-destaque);
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.carta-memoria.virada,
+.carta-memoria.encontrada {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.carta-memoria.encontrada {
+    border-color: var(--cor-secundaria);
+    opacity: 0.6;
+    cursor: default;
+}
+
+
+/* ===== NÍVEL 4 — JOGO DA VELHA ===== */
+
+.tabuleiro-velha {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 90%;
+    max-width: 320px;
+}
+
+.celula-velha {
+    aspect-ratio: 1 / 1;
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 3px solid var(--cor-primaria);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.celula-velha:hover:not(:disabled) {
+    background-color: rgba(255, 107, 157, 0.15);
+}
+
+.celula-velha:disabled {
+    cursor: default;
+}
+
+.area-jogo-especial {
+    background: linear-gradient(160deg, rgba(43, 16, 85, 0.4), rgba(255, 107, 157, 0.1));
+    border-color: var(--cor-secundaria);
+}
+
+.tesouro-escondido {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    opacity: 0.35;
+    filter: blur(1px);
+    transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+}
+
+.tesouro-escondido:hover {
+    opacity: 0.6;
+    filter: blur(0);
+}
+
+.tesouro-escondido.encontrado {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1.3);
+    cursor: default;
+}

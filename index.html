@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aventura do Guilherme ❤️</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="img/icon.png">
+    
+    <!-- Fonte pixelada para o visual retrô -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/map.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <link rel="stylesheet" href="./css/final.css">
+    <link rel="stylesheet" href="./css/pokemon.css">
+    
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         TELA INICIAL
+         ========================================= -->
+
+    <section id="tela-inicial" class="tela ativa">
+
+        <h1 class="titulo-jogo">
+            AVENTURA DO GUILHERME
+        </h1>
+
+        <p class="subtitulo-jogo">
+            Uma pequena aventura feita especialmente para você. ❤️
+        </p>
+
+        <button id="btn-comecar" class="botao-pixel">
+            ▶ COMEÇAR
+        </button>
+
+    </section>
+
+
+    <!-- =========================================
+         INTRODUÇÃO
+         ========================================= -->
+
+    <section id="tela-introducao" class="tela">
+
+        <div class="caixa-dialogo">
+
+            <p id="texto-dialogo"></p>
+
+        </div>
+
+        <button id="btn-continuar" class="botao-pixel">
+            CONTINUAR ▶
+        </button>
+
+    </section>
+
+
+    <!-- =========================================
+         MAPA
+         ========================================= -->
+
+    <section id="tela-mapa" class="tela">
+
+        <h2 class="titulo-mapa">
+            ESCOLHA SEU CAMINHO
+        </h2>
+
+        <div class="trilha-mapa">
+
+
+            <!-- NÍVEL 1 -->
+
+            <button
+                class="no-mapa desbloqueado"
+                data-nivel="1"
+            >
+
+                <span class="icone-no">
+                    ❤️
+                </span>
+
+                <span class="label-no">
+                    Nível 1
+                </span>
+
+            </button>
+
+
+            <!-- NÍVEL 2 -->
+
+            <button
+                class="no-mapa bloqueado"
+                data-nivel="2"
+                disabled
+            >
+
+                <span class="icone-no">
+                    🔒
+                </span>
+
+                <span class="label-no">
+                    Nível 2
+                </span>
+
+            </button>
+
+
+            <!-- NÍVEL 3 -->
+
+            <button
+                class="no-mapa bloqueado"
+                data-nivel="3"
+                disabled
+            >
+
+                <span class="icone-no">
+                    🔒
+                </span>
+
+                <span class="label-no">
+                    Nível 3
+                </span>
+
+            </button>
+
+
+            <!-- NÍVEL 4 -->
+
+            <button
+                class="no-mapa bloqueado"
+                data-nivel="4"
+                disabled
+            >
+
+                <span class="icone-no">
+                    🔒
+                </span>
+
+                <span class="label-no">
+                    Nível 4
+                </span>
+
+            </button>
+
+
+            <!-- NÍVEL 5 -->
+
+            <button
+                class="no-mapa bloqueado"
+                data-nivel="5"
+                disabled
+            >
+
+                <span class="icone-no">
+                    🔒
+                </span>
+
+                <span class="label-no">
+                    Nível 5
+                </span>
+
+            </button>
+
+
+            <!-- FINAL -->
+
+            <button
+                class="no-mapa bloqueado"
+                data-nivel="final"
+                disabled
+            >
+
+                <span class="icone-no">
+                    🔒
+                </span>
+
+                <span class="label-no">
+                    Final
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NÍVEL 1
+         ========================================= -->
+
+    <section id="tela-nivel-1" class="tela">
+
+        <h2 class="titulo-nivel">
+            NÍVEL 1 — O COMEÇO
+        </h2>
+
+        <p class="instrucao-nivel">
+            Colete 10 corações ❤️
+        </p>
+
+        <div class="contador-nivel">
+
+            <span id="contador-coracoes">
+                0
+            </span>
+
+            / 10
+
+        </div>
+
+        <div
+            id="area-jogo-1"
+            class="area-jogo">
+        </div>
+
+
+        <div
+            id="vitoria-nivel-1"
+            class="mensagem-vitoria escondido"
+        >
+
+            <p>
+                ✨ VOCÊ CONSEGUIU! ✨
+            </p>
+
+            <button
+                id="btn-continuar-nivel-1"
+                class="botao-pixel"
+            >
+                CONTINUAR ▶
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         TELA DE MEMÓRIA
+         ========================================= -->
+
+    <section id="tela-memoria" class="tela">
+
+        <div class="cartao-memoria">
+
+            <p class="rotulo-memoria">
+                MEMÓRIA DESBLOQUEADA
+            </p>
+
+            <img
+                id="foto-memoria"
+                class="foto-memoria"
+                src=""
+                alt="Memória desbloqueada"
+            >
+
+            <p
+                id="declaracao-memoria"
+                class="declaracao-memoria"
+            ></p>
+
+            <button
+                id="btn-continuar-memoria"
+                class="botao-pixel"
+            >
+                CONTINUAR ▶
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NÍVEL 2
+         ========================================= -->
+
+    <section id="tela-nivel-2" class="tela">
+
+        <h2 class="titulo-nivel">
+            NÍVEL 2 — VOCÊ ME CONHECE?
+        </h2>
+
+        <div class="contador-nivel">
+
+            <span id="pergunta-contador"></span>
+
+        </div>
+
+        <div class="cartao-pergunta">
+
+            <p
+                id="pergunta-nivel-2"
+                class="texto-pergunta"
+            ></p>
+
+            <div class="opcoes-quiz"></div>
+
+        </div>
+
+
+        <div
+            id="resultado-nivel-2"
+            class="mensagem-vitoria escondido"
+        >
+
+            <p id="mensagem-resultado-nivel-2"></p>
+
+            <button
+                id="btn-continuar-nivel-2"
+                class="botao-pixel"
+            >
+                CONTINUAR ▶
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NÍVEL 3
+         ========================================= -->
+
+    <section id="tela-nivel-3" class="tela">
+
+        <h2 class="titulo-nivel">
+            NÍVEL 3 — NOSSAS MEMÓRIAS
+        </h2>
+
+        <div class="contador-nivel">
+
+            Tentativas:
+            <span id="contador-tentativas">
+                0
+            </span>
+
+        </div>
+
+        <div
+            id="tabuleiro-memoria"
+            class="tabuleiro-memoria"
+        ></div>
+
+
+        <div
+            id="vitoria-nivel-3"
+            class="mensagem-vitoria escondido"
+        >
+
+            <p>
+                ✨ VOCÊ CONSEGUIU! ✨
+            </p>
+
+            <button
+                id="btn-continuar-nivel-3"
+                class="botao-pixel"
+            >
+                CONTINUAR ▶
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NÍVEL 4
+         ========================================= -->
+
+    <section id="tela-nivel-4" class="tela">
+
+        <h2 class="titulo-nivel">
+            NÍVEL 4 — BATALHA DO AMOR
+        </h2>
+
+        <p class="instrucao-nivel">
+            Fase 4 cancelada. A programadora cansou de codar. 😭❤️
+        </p>
+
+        <button
+            id="btn-continuar-nivel-4"
+            class="botao-pixel"
+        >
+            ▶ CONTINUAR
+        </button>
+
+    </section>
+
+
+    <!-- =========================================
+         NÍVEL 5
+         ========================================= -->
+
+    <section
+        id="tela-nivel-5"
+        class="tela nivel-especial"
+    >
+
+        <h2 class="titulo-nivel">
+            NÍVEL 5 — A ÚLTIMA MEMÓRIA
+        </h2>
+
+        <p class="instrucao-nivel">
+            Encontre tudo o que está escondido... ✨
+        </p>
+
+        <div class="contador-nivel">
+
+            <span id="contador-tesouros">
+                0
+            </span>
+
+            /
+
+            <span id="total-tesouros"></span>
+
+        </div>
+
+        <div
+            id="area-jogo-5"
+            class="area-jogo area-jogo-especial"
+        ></div>
+
+
+        <div
+            id="vitoria-nivel-5"
+            class="mensagem-vitoria escondido"
+        >
+
+            <p>
+                ✨ VOCÊ CONSEGUIU! ✨
+            </p>
+
+            <button
+                id="btn-continuar-nivel-5"
+                class="botao-pixel"
+            >
+                CONTINUAR ▶
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FASE FINAL
+         ========================================= -->
+
+    <section
+        id="tela-final"
+        class="tela tela-final"
+    >
+
+
+        <!-- POKÉMON DECORATIVOS -->
+
+        <div id="pokemon-decoracao"></div>
+
+
+        <!-- EFEITOS -->
+
+        <div
+            id="camada-efeitos"
+            class="camada-efeitos"
+        ></div>
+
+
+        <!-- CONTEÚDO FINAL -->
+
+        <div class="conteudo-final">
+
+
+            <h1 class="titulo-final">
+                VOCÊ COMPLETOU A NOSSA AVENTURA ❤️
+            </h1>
+
+
+            <!-- GALERIA DE FOTOS -->
+
+            <div
+                id="galeria-final"
+                class="galeria-final"
+            ></div>
+
+
+            <!-- POEMA / DECLARAÇÃO -->
+
+            <div class="cartao-poema">
+
+                <p
+                    id="poema-final"
+                    class="texto-poema"
+                ></p>
+
+            </div>
+
+
+            <!-- MENSAGEM DE ANIVERSÁRIO -->
+
+            <div class="cartao-aniversario">
+
+                <h2 class="titulo-aniversario">
+                    ❤️ FELIZ ANIVERSÁRIO, MEU AMOR! ❤️
+                </h2>
+
+                <p
+                    id="mensagem-aniversario"
+                    class="texto-aniversario"
+                ></p>
+
+                <p class="assinatura-final">
+                    Essa pequena aventura foi feita especialmente para você.
+                </p>
+
+            </div>
+
+
+            <!-- BOTÃO -->
+
+            <button
+                id="btn-mais-confete"
+                class="botao-pixel"
+            >
+                ✨ MAIS MAGIA ✨
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script src="js/main.js"></script>
+    <script src="js/memories.js"></script>
+    <script src="js/game1.js"></script>
+    <script src="js/game2.js"></script>
+    <script src="js/game3.js"></script>
+    <script src="js/game4.js"></script>
+    <script src="js/game5.js"></script>
+    <script src="js/final.js"></script>
+    <!-- POKÉMON -->
+    <script src="js/pokemon.js"></script>
+
+
+</body>
+
+</html>
